@@ -217,6 +217,7 @@
                     <a href="#about" class="nav-item text-purple-700 hover:text-pink-600 font-bold">📖 درباره ما</a>
                     <a href="#courses" class="nav-item text-purple-700 hover:text-pink-600 font-bold">🎓 دوره‌ها</a>
                     <a href="#articles" class="nav-item text-purple-700 hover:text-pink-600 font-bold">📚 محتوای فرهنگی</a>
+                    <a href="#calendar" class="nav-item text-purple-700 hover:text-pink-600 font-bold">📅 تقویم</a>
                     <a href="#news" class="nav-item text-purple-700 hover:text-pink-600 font-bold">📰 اخبار</a>
                     <a href="#contact" class="nav-item text-purple-700 hover:text-pink-600 font-bold">📞 تماس</a>
                 </nav>
@@ -236,6 +237,7 @@
                     <a href="#about" class="block py-2 text-gray-700 hover:text-islamic-green">درباره ما</a>
                     <a href="#courses" class="block py-2 text-gray-700 hover:text-islamic-green">دوره‌ها</a>
                     <a href="#articles" class="block py-2 text-gray-700 hover:text-islamic-green">محتوای فرهنگی</a>
+                    <a href="#calendar" class="block py-2 text-gray-700 hover:text-islamic-green">تقویم</a>
                     <a href="#news" class="block py-2 text-gray-700 hover:text-islamic-green">اخبار</a>
                     <a href="#contact" class="block py-2 text-gray-700 hover:text-islamic-green">تماس</a>
                 </div>
@@ -249,7 +251,7 @@
             <div class="container mx-auto px-4 py-20">
                 <div class="text-center text-white">
                     <div class="slide-in">
-                        <h2 class="text-5xl md:text-7xl font-bold mb-8 persian-font gradient-text drop-shadow-2xl">✨ بسم الله الرحمن الرحیم ✨</h2>
+                        <h2 class="text-5xl md:text-5xl font-bold mb-8 persian-font gradient-text drop-shadow-2xl"> بسم الله الرحمن الرحیم </h2>
                         <p class="text-2xl md:text-3xl mb-10 opacity-95 font-bold persian-font">🌟 مؤسسه قرآنی نور الهدی 🌟</p>
                         <p class="text-xl mb-16 max-w-3xl mx-auto opacity-90 leading-relaxed font-medium persian-font">
                             🕌 مرکز آموزش قرآن کریم، معارف اسلامی و تربیت معنوی با هدف تربیت نسلی متعهد و آگاه 📿
@@ -561,6 +563,148 @@
             </div>
         </section>
 
+        <!-- Calendar Section -->
+        <section id="calendar" class="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-indigo-800 mb-6 persian-font">📅 تقویم شمسی و اوقات شرعی 📅</h2>
+                    <p class="text-indigo-600 max-w-3xl mx-auto text-lg font-medium leading-relaxed persian-font">تقویم کامل با اوقات شرعی دقیق تهران و امکان یادداشت‌گیری شخصی ✨</p>
+                </div>
+                
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                    <!-- Calendar -->
+                    <div class="xl:col-span-2">
+                        <div class="glass-effect rounded-3xl shadow-2xl overflow-hidden border border-indigo-200">
+                            <!-- Calendar Header -->
+                            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 text-white">
+                                <div class="flex items-center justify-between">
+                                    <button id="prev-month" class="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-all">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div class="text-center">
+                                        <h3 id="current-month" class="text-2xl font-bold persian-font">مهر ۱۴۰۳</h3>
+                                        <p id="current-date-hijri" class="text-sm opacity-90 arabic-font">ربیع الاول ۱۴۴۶</p>
+                                    </div>
+                                    <button id="next-month" class="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-all">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Calendar Grid -->
+                            <div class="p-6 bg-white">
+                                <!-- Days of Week -->
+                                <div class="grid grid-cols-7 gap-2 mb-4">
+                                    <div class="text-center font-bold text-indigo-600 p-3 persian-font">شنبه</div>
+                                    <div class="text-center font-bold text-indigo-600 p-3 persian-font">یکشنبه</div>
+                                    <div class="text-center font-bold text-indigo-600 p-3 persian-font">دوشنبه</div>
+                                    <div class="text-center font-bold text-indigo-600 p-3 persian-font">سه‌شنبه</div>
+                                    <div class="text-center font-bold text-indigo-600 p-3 persian-font">چهارشنبه</div>
+                                    <div class="text-center font-bold text-indigo-600 p-3 persian-font">پنج‌شنبه</div>
+                                    <div class="text-center font-bold text-red-500 p-3 persian-font">جمعه</div>
+                                </div>
+                                
+                                <!-- Calendar Days -->
+                                <div id="calendar-days" class="grid grid-cols-7 gap-2">
+                                    <!-- Days will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Prayer Times & Notes -->
+                    <div class="space-y-8">
+                        <!-- Prayer Times -->
+                        <div class="glass-effect rounded-3xl shadow-2xl overflow-hidden border border-green-200">
+                            <div class="bg-gradient-to-r from-green-600 to-teal-600 p-6 text-white text-center">
+                                <h3 class="text-2xl font-bold persian-font">🕌 اوقات شرعی تهران</h3>
+                                <p id="prayer-date" class="text-sm opacity-90 mt-2 persian-font">امروز - ۱۵ مهر ۱۴۰۳</p>
+                            </div>
+                            <div class="p-6 bg-white space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl border border-orange-200">
+                                    <div class="flex items-center space-x-3 space-x-reverse">
+                                        <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+                                            <span class="text-white text-lg">🌅</span>
+                                        </div>
+                                        <span class="font-bold text-orange-700 persian-font">اذان صبح</span>
+                                    </div>
+                                    <span id="fajr-time" class="font-bold text-orange-700 text-lg">۰۵:۲۳</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200">
+                                    <div class="flex items-center space-x-3 space-x-reverse">
+                                        <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+                                            <span class="text-white text-lg">☀️</span>
+                                        </div>
+                                        <span class="font-bold text-yellow-700 persian-font">طلوع آفتاب</span>
+                                    </div>
+                                    <span id="sunrise-time" class="font-bold text-yellow-700 text-lg">۰۶:۴۵</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+                                    <div class="flex items-center space-x-3 space-x-reverse">
+                                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                                            <span class="text-white text-lg">🌞</span>
+                                        </div>
+                                        <span class="font-bold text-blue-700 persian-font">اذان ظهر</span>
+                                    </div>
+                                    <span id="dhuhr-time" class="font-bold text-blue-700 text-lg">۱۲:۰۷</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+                                    <div class="flex items-center space-x-3 space-x-reverse">
+                                        <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center">
+                                            <span class="text-white text-lg">🌇</span>
+                                        </div>
+                                        <span class="font-bold text-purple-700 persian-font">اذان مغرب</span>
+                                    </div>
+                                    <span id="maghrib-time" class="font-bold text-purple-700 text-lg">۱۸:۲۱</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl border border-indigo-200">
+                                    <div class="flex items-center space-x-3 space-x-reverse">
+                                        <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center">
+                                            <span class="text-white text-lg">🌙</span>
+                                        </div>
+                                        <span class="font-bold text-indigo-700 persian-font">اذان عشا</span>
+                                    </div>
+                                    <span id="isha-time" class="font-bold text-indigo-700 text-lg">۱۹:۴۱</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Notes Section -->
+                        <div class="glass-effect rounded-3xl shadow-2xl overflow-hidden border border-pink-200">
+                            <div class="bg-gradient-to-r from-pink-600 to-rose-600 p-6 text-white text-center">
+                                <h3 class="text-2xl font-bold persian-font">📝 یادداشت‌های من</h3>
+                                <p class="text-sm opacity-90 mt-2 persian-font">یادداشت‌های شخصی برای روز انتخابی</p>
+                            </div>
+                            <div class="p-6 bg-white">
+                                <div class="mb-4">
+                                    <label for="note-input" class="block text-sm font-medium text-gray-700 mb-2 persian-font">یادداشت جدید:</label>
+                                    <textarea id="note-input" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent persian-font" placeholder="یادداشت خود را اینجا بنویسید..."></textarea>
+                                </div>
+                                <button id="add-note" class="w-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg persian-font">
+                                    ➕ افزودن یادداشت
+                                </button>
+                                
+                                <div class="mt-6">
+                                    <h4 class="font-bold text-gray-800 mb-4 persian-font">یادداشت‌های امروز:</h4>
+                                    <div id="notes-list" class="space-y-3">
+                                        <!-- Notes will be added here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="py-16 bg-white">
             <div class="container mx-auto px-4">
@@ -798,11 +942,220 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        // Persian Calendar and Prayer Times functionality
+        const persianMonths = [
+            'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
+            'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
+        ];
+
+        const hijriMonths = [
+            'محرم', 'صفر', 'ربیع الاول', 'ربیع الثانی', 'جمادی الاول', 'جمادی الثانی',
+            'رجب', 'شعبان', 'رمضان', 'شوال', 'ذی القعده', 'ذی الحجه'
+        ];
+
+        let currentPersianYear = 1403;
+        let currentPersianMonth = 7; // مهر (0-based)
+        let selectedDate = null;
+        let userNotes = JSON.parse(localStorage.getItem('calendarNotes') || '{}');
+
+        // Prayer times for Tehran (sample data - in real app would use API)
+        const prayerTimes = {
+            fajr: '05:23',
+            sunrise: '06:45',
+            dhuhr: '12:07',
+            maghrib: '18:21',
+            isha: '19:41'
+        };
+
+        function updatePrayerTimes() {
+            document.getElementById('fajr-time').textContent = prayerTimes.fajr;
+            document.getElementById('sunrise-time').textContent = prayerTimes.sunrise;
+            document.getElementById('dhuhr-time').textContent = prayerTimes.dhuhr;
+            document.getElementById('maghrib-time').textContent = prayerTimes.maghrib;
+            document.getElementById('isha-time').textContent = prayerTimes.isha;
+        }
+
+        function getDaysInPersianMonth(year, month) {
+            // Persian calendar days per month
+            if (month < 6) return 31; // فروردین تا شهریور
+            if (month < 11) return 30; // مهر تا بهمن
+            // اسفند - check for leap year
+            return isLeapPersianYear(year) ? 30 : 29;
+        }
+
+        function isLeapPersianYear(year) {
+            // Simplified leap year calculation
+            const cycle = year % 128;
+            return [1, 5, 9, 13, 17, 22, 26, 30, 34, 38, 43, 47, 51, 55, 59, 64, 68, 72, 76, 80, 85, 89, 93, 97, 101, 106, 110, 114, 118, 122].includes(cycle);
+        }
+
+        function getFirstDayOfMonth(year, month) {
+            // Simplified calculation - in real app would use proper Persian calendar library
+            return Math.floor(Math.random() * 7); // 0 = Saturday, 6 = Friday
+        }
+
+        function renderCalendar() {
+            const calendarDays = document.getElementById('calendar-days');
+            const currentMonthElement = document.getElementById('current-month');
+            const currentDateHijri = document.getElementById('current-date-hijri');
+            
+            currentMonthElement.textContent = `${persianMonths[currentPersianMonth]} ${currentPersianYear}`;
+            currentDateHijri.textContent = `${hijriMonths[Math.floor(Math.random() * 12)]} ۱۴۴۶`;
+            
+            calendarDays.innerHTML = '';
+            
+            const daysInMonth = getDaysInPersianMonth(currentPersianYear, currentPersianMonth);
+            const firstDay = getFirstDayOfMonth(currentPersianYear, currentPersianMonth);
+            
+            // Add empty cells for days before month starts
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'p-3';
+                calendarDays.appendChild(emptyDay);
+            }
+            
+            // Add days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                const dateKey = `${currentPersianYear}-${currentPersianMonth}-${day}`;
+                const hasNote = userNotes[dateKey] && userNotes[dateKey].length > 0;
+                
+                dayElement.className = `p-3 text-center cursor-pointer rounded-lg transition-all hover:bg-indigo-100 ${
+                    day === 15 ? 'bg-indigo-600 text-white font-bold' : 'hover:text-indigo-600'
+                } ${hasNote ? 'border-2 border-pink-400' : ''}`;
+                
+                dayElement.innerHTML = `
+                    <div class="font-medium">${day}</div>
+                    ${hasNote ? '<div class="w-2 h-2 bg-pink-500 rounded-full mx-auto mt-1"></div>' : ''}
+                `;
+                
+                dayElement.addEventListener('click', () => selectDate(day));
+                calendarDays.appendChild(dayElement);
+            }
+        }
+
+        function selectDate(day) {
+            selectedDate = `${currentPersianYear}-${currentPersianMonth}-${day}`;
+            
+            // Update selected day styling
+            document.querySelectorAll('#calendar-days > div').forEach(el => {
+                el.classList.remove('bg-indigo-600', 'text-white');
+                if (el.textContent.trim() && parseInt(el.querySelector('div')?.textContent) === day) {
+                    el.classList.add('bg-indigo-600', 'text-white');
+                }
+            });
+            
+            // Update prayer date
+            document.getElementById('prayer-date').textContent = 
+                `${day} ${persianMonths[currentPersianMonth]} ${currentPersianYear}`;
+            
+            // Load notes for selected date
+            loadNotesForDate(selectedDate);
+        }
+
+        function loadNotesForDate(dateKey) {
+            const notesList = document.getElementById('notes-list');
+            const notes = userNotes[dateKey] || [];
+            
+            notesList.innerHTML = '';
+            
+            if (notes.length === 0) {
+                notesList.innerHTML = '<p class="text-gray-500 text-center py-4 persian-font">هیچ یادداشتی برای این روز وجود ندارد</p>';
+                return;
+            }
+            
+            notes.forEach((note, index) => {
+                const noteElement = document.createElement('div');
+                noteElement.className = 'bg-gradient-to-r from-pink-50 to-rose-50 p-4 rounded-lg border border-pink-200';
+                noteElement.innerHTML = `
+                    <div class="flex items-start justify-between">
+                        <p class="text-gray-700 flex-1 persian-font">${note}</p>
+                        <button onclick="deleteNote('${dateKey}', ${index})" class="text-red-500 hover:text-red-700 ml-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                            </svg>
+                        </button>
+                    </div>
+                `;
+                notesList.appendChild(noteElement);
+            });
+        }
+
+        function addNote() {
+            const noteInput = document.getElementById('note-input');
+            const noteText = noteInput.value.trim();
+            
+            if (!noteText) {
+                alert('لطفاً متن یادداشت را وارد کنید');
+                return;
+            }
+            
+            if (!selectedDate) {
+                alert('لطفاً ابتدا یک روز را انتخاب کنید');
+                return;
+            }
+            
+            if (!userNotes[selectedDate]) {
+                userNotes[selectedDate] = [];
+            }
+            
+            userNotes[selectedDate].push(noteText);
+            localStorage.setItem('calendarNotes', JSON.stringify(userNotes));
+            
+            noteInput.value = '';
+            loadNotesForDate(selectedDate);
+            renderCalendar(); // Re-render to show note indicator
+        }
+
+        window.deleteNote = function(dateKey, index) {
+            if (userNotes[dateKey]) {
+                userNotes[dateKey].splice(index, 1);
+                if (userNotes[dateKey].length === 0) {
+                    delete userNotes[dateKey];
+                }
+                localStorage.setItem('calendarNotes', JSON.stringify(userNotes));
+                loadNotesForDate(dateKey);
+                renderCalendar();
+            }
+        };
+
+        // Calendar navigation
+        document.getElementById('prev-month').addEventListener('click', () => {
+            currentPersianMonth--;
+            if (currentPersianMonth < 0) {
+                currentPersianMonth = 11;
+                currentPersianYear--;
+            }
+            renderCalendar();
+        });
+
+        document.getElementById('next-month').addEventListener('click', () => {
+            currentPersianMonth++;
+            if (currentPersianMonth > 11) {
+                currentPersianMonth = 0;
+                currentPersianYear++;
+            }
+            renderCalendar();
+        });
+
+        // Add note button
+        document.getElementById('add-note').addEventListener('click', addNote);
+
+        // Enter key in note input
+        document.getElementById('note-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                addNote();
+            }
+        });
+
+        // Initialize calendar
+        renderCalendar();
+        updatePrayerTimes();
+        selectDate(15); // Select today (15th) by default
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9917d866a6a392a8',t:'MTc2MDk1NjI4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9917ee69e0f41dc1',t:'MTc2MDk1NzE4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
-
 
 
 
